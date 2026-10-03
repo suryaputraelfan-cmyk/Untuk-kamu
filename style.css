@@ -1,0 +1,1402 @@
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #f9e7e9,
+            transparent 40%
+        ),
+
+        radial-gradient(
+            circle at bottom right,
+            #dfb9c0,
+            transparent 45%
+        ),
+
+        #efd5d9;
+
+    color: #5b3b40;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =================================
+   CONTAINER
+================================= */
+
+.container {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 25px;
+
+}
+
+
+/* =================================
+   BACKGROUND HEART
+================================= */
+
+.background-hearts span {
+
+    position: fixed;
+
+    color: #a65c69;
+
+    opacity: 0.08;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    font-size: 100px;
+
+    animation:
+        floatingHeart
+        7s
+        ease-in-out
+        infinite;
+
+}
+
+
+.background-hearts span:nth-child(1) {
+
+    top: 5%;
+
+    left: 3%;
+
+    transform:
+        rotate(-15deg);
+
+}
+
+
+.background-hearts span:nth-child(2) {
+
+    top: 40%;
+
+    right: 5%;
+
+    font-size: 70px;
+
+    animation-delay: 1.5s;
+
+}
+
+
+.background-hearts span:nth-child(3) {
+
+    bottom: 10%;
+
+    left: 5%;
+
+    font-size: 80px;
+
+    animation-delay: 3s;
+
+}
+
+
+.background-hearts span:nth-child(4) {
+
+    top: 70%;
+
+    right: 30%;
+
+    font-size: 55px;
+
+    animation-delay: 4.5s;
+
+}
+
+
+.background-hearts span:nth-child(5) {
+
+    top: 20%;
+
+    right: 35%;
+
+    font-size: 45px;
+
+    animation-delay: 2s;
+
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding:
+        30px 10px;
+
+    animation:
+        heroAppear
+        1.5s
+        ease
+        both;
+
+}
+
+
+.hero .small-text {
+
+    animation:
+        fadeUp
+        1s
+        ease
+        0.2s
+        both;
+
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(
+            45px,
+            10vw,
+            80px
+        );
+
+    color: #713f47;
+
+    margin-bottom: 25px;
+
+    animation:
+        titleAppear
+        1.2s
+        ease
+        0.4s
+        both;
+
+}
+
+
+.intro {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+
+    animation:
+        fadeUp
+        1s
+        ease
+        0.8s
+        both;
+
+}
+
+
+/* =================================
+   BUTTON
+================================= */
+
+button {
+
+    border: none;
+
+    padding:
+        15px 28px;
+
+    border-radius: 50px;
+
+    background: #b76e79;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition:
+        transform
+        0.25s
+        ease,
+
+        box-shadow
+        0.25s
+        ease;
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            100,
+            50,
+            60,
+            0.18
+        );
+
+}
+
+
+button:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.06);
+
+    box-shadow:
+        0 12px 30px
+        rgba(
+            100,
+            50,
+            60,
+            0.25
+        );
+
+}
+
+
+button:active {
+
+    transform:
+        scale(0.96);
+
+}
+
+
+/* =================================
+   CONTENT
+================================= */
+
+#content {
+
+    padding-bottom: 100px;
+
+}
+
+
+/* =================================
+   SCROLL REVEAL
+================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(45px)
+        scale(0.98);
+
+    transition:
+        opacity
+        1s
+        ease,
+
+        transform
+        1s
+        ease;
+
+}
+
+
+.reveal.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+/* =================================
+   MUSIC
+================================= */
+
+.music-box {
+
+    text-align: center;
+
+    padding:
+        50px 20px;
+
+    margin:
+        20px 0 50px;
+
+}
+
+
+.music-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+    animation:
+        musicFloat
+        2.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+.music-box h2 {
+
+    color: #713f47;
+
+    margin-bottom: 12px;
+
+}
+
+
+.music-box p:not(.small-text) {
+
+    opacity: 0.7;
+
+    margin-bottom: 20px;
+
+}
+
+
+.music-box audio {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin-top: 10px;
+
+}
+
+
+/* =================================
+   LETTER
+================================= */
+
+.letter {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.68
+        );
+
+    backdrop-filter:
+        blur(12px);
+
+    border-radius: 30px;
+
+    padding:
+        50px 35px;
+
+    margin:
+        30px 0;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 40px
+        rgba(
+            80,
+            40,
+            50,
+            0.12
+        );
+
+}
+
+
+.letter .emoji {
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+    animation:
+        softPulse
+        2s
+        ease-in-out
+        infinite;
+
+}
+
+
+.letter h2 {
+
+    color: #713f47;
+
+    margin-bottom: 25px;
+
+}
+
+
+.letter p {
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 22px;
+
+}
+
+
+/* =================================
+   SURAT BERTAHAP
+================================= */
+
+.letter-line {
+
+    opacity: 0;
+
+    transform:
+        translateY(18px);
+
+    transition:
+        opacity
+        0.8s
+        ease,
+
+        transform
+        0.8s
+        ease;
+
+}
+
+
+.letter.show .letter-line {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.letter.show .letter-line:nth-of-type(1) {
+
+    transition-delay: 0.15s;
+
+}
+
+
+.letter.show .letter-line:nth-of-type(2) {
+
+    transition-delay: 0.30s;
+
+}
+
+
+.letter.show .letter-line:nth-of-type(3) {
+
+    transition-delay: 0.45s;
+
+}
+
+
+.letter.show .letter-line:nth-of-type(4) {
+
+    transition-delay: 0.60s;
+
+}
+
+
+.letter.show .letter-line:nth-of-type(5) {
+
+    transition-delay: 0.75s;
+
+}
+
+
+.letter.show .letter-line:nth-of-type(6) {
+
+    transition-delay: 0.90s;
+
+}
+
+
+.letter.show .letter-line:nth-of-type(7) {
+
+    transition-delay: 1.05s;
+
+}
+
+
+.letter.show .letter-line:nth-of-type(8) {
+
+    transition-delay: 1.20s;
+
+}
+
+
+/* =================================
+   HIGHLIGHT
+================================= */
+
+.highlight {
+
+    font-size:
+        20px !important;
+
+    font-weight:
+        bold;
+
+    color:
+        #9b5360;
+
+}
+
+
+/* =================================
+   QUESTION
+================================= */
+
+.question {
+
+    font-size:
+        clamp(
+            30px,
+            7vw,
+            55px
+        );
+
+    line-height:
+        1.25;
+
+    color:
+        #9b5360;
+
+    margin-top:
+        15px;
+
+}
+
+
+/* =================================
+   GALLERY
+================================= */
+
+.gallery {
+
+    text-align:
+        center;
+
+    margin:
+        80px 0;
+
+}
+
+
+.gallery h2 {
+
+    color:
+        #713f47;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.gallery-hint {
+
+    font-size:
+        13px;
+
+    opacity:
+        0.55;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+/* =================================
+   PHOTOS
+================================= */
+
+.photos {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                220px,
+                1fr
+            )
+        );
+
+    gap:
+        18px;
+
+}
+
+
+.photo-card {
+
+    overflow:
+        hidden;
+
+    border-radius:
+        25px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(
+            80,
+            40,
+            50,
+            0.15
+        );
+
+    opacity:
+        0;
+
+    transform:
+        translateY(40px)
+        scale(0.94);
+
+    cursor:
+        pointer;
+
+    transition:
+        opacity
+        0.8s
+        ease,
+
+        transform
+        0.5s
+        ease,
+
+        box-shadow
+        0.4s
+        ease;
+
+}
+
+
+.gallery.show .photo-card {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+.gallery.show .photo-card:nth-child(1) {
+
+    transition-delay:
+        0.15s;
+
+}
+
+
+.gallery.show .photo-card:nth-child(2) {
+
+    transition-delay:
+        0.40s;
+
+}
+
+
+.gallery.show .photo-card:nth-child(3) {
+
+    transition-delay:
+        0.65s;
+
+}
+
+
+.photo-card:hover {
+
+    transform:
+        translateY(-8px)
+        scale(1.02);
+
+    box-shadow:
+        0 20px 40px
+        rgba(
+            80,
+            40,
+            50,
+            0.22
+        );
+
+}
+
+
+.photos img {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    aspect-ratio:
+        1 / 1;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform
+        0.7s
+        ease;
+
+}
+
+
+.photo-card:hover img {
+
+    transform:
+        scale(1.07);
+
+}
+
+
+/* =================================
+   FULLSCREEN PHOTO
+================================= */
+
+.photo-viewer {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    background:
+        rgba(
+            50,
+            25,
+            30,
+            0.92
+        );
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    padding:
+        30px;
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    transition:
+        opacity
+        0.35s
+        ease;
+
+    z-index:
+        9999;
+
+}
+
+
+.photo-viewer.active {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+}
+
+
+.photo-viewer img {
+
+    max-width:
+        95vw;
+
+    max-height:
+        85vh;
+
+    object-fit:
+        contain;
+
+    border-radius:
+        20px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+
+    transform:
+        scale(0.85);
+
+    transition:
+        transform
+        0.4s
+        ease;
+
+}
+
+
+.photo-viewer.active img {
+
+    transform:
+        scale(1);
+
+}
+
+
+.close-photo {
+
+    position:
+        absolute;
+
+    top:
+        20px;
+
+    right:
+        20px;
+
+    width:
+        50px;
+
+    height:
+        50px;
+
+    padding:
+        0;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.18
+        );
+
+    font-size:
+        25px;
+
+}
+
+
+/* =================================
+   ANSWER
+================================= */
+
+.answer {
+
+    text-align:
+        center;
+
+    padding:
+        70px 15px;
+
+}
+
+
+.big-heart {
+
+    font-size:
+        75px;
+
+    margin-bottom:
+        20px;
+
+    animation:
+        heartbeat
+        1.5s
+        infinite;
+
+}
+
+
+.answer h2 {
+
+    color:
+        #713f47;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.answer > p:not(#answerText) {
+
+    opacity:
+        0.7;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.buttons {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    min-height:
+        100px;
+
+}
+
+
+#yesButton {
+
+    background:
+        #b05261;
+
+}
+
+
+#noButton {
+
+    background:
+        #8c6970;
+
+    position:
+        relative;
+
+    transition:
+        left
+        0.25s
+        ease,
+
+        top
+        0.25s
+        ease,
+
+        transform
+        0.25s
+        ease;
+
+}
+
+
+#answerText {
+
+    margin-top:
+        30px;
+
+    min-height:
+        35px;
+
+    font-size:
+        21px;
+
+    font-weight:
+        bold;
+
+    color:
+        #8e4653;
+
+}
+
+
+/* =================================
+   HEART PARTICLES
+================================= */
+
+.heart-container {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+    z-index:
+        9998;
+
+}
+
+
+.flying-heart {
+
+    position:
+        absolute;
+
+    bottom:
+        -30px;
+
+    font-size:
+        22px;
+
+    animation:
+        flyHeart
+        4s
+        ease-out
+        forwards;
+
+    opacity:
+        0;
+
+}
+
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes heroAppear {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes titleAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes heartbeat {
+
+    0% {
+        transform:
+            scale(1);
+    }
+
+    25% {
+        transform:
+            scale(1.12);
+    }
+
+    40% {
+        transform:
+            scale(1);
+    }
+
+    60% {
+        transform:
+            scale(1.08);
+    }
+
+    100% {
+        transform:
+            scale(1);
+    }
+
+}
+
+
+@keyframes softPulse {
+
+    0% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.08);
+    }
+
+    100% {
+        transform:
+            scale(1);
+    }
+
+}
+
+
+@keyframes musicFloat {
+
+    0% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-7px);
+    }
+
+    100% {
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes floatingHeart {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(-5deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-20px)
+            rotate(5deg);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-5deg);
+
+    }
+
+}
+
+
+@keyframes flyHeart {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(0)
+            scale(0.5)
+            rotate(0deg);
+
+    }
+
+    15% {
+
+        opacity:
+            1;
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(-100vh)
+            scale(1.4)
+            rotate(25deg);
+
+    }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+
+        padding:
+            15px;
+
+    }
+
+
+    .hero {
+
+        padding:
+            30px 5px;
+
+    }
+
+
+    .letter {
+
+        padding:
+            35px 22px;
+
+    }
+
+
+    .letter p {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .photos {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .buttons {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .buttons button {
+
+        width:
+            85%;
+
+    }
+
+
+    .photo-viewer {
+
+        padding:
+            15px;
+
+    }
+
+
+    .photo-viewer img {
+
+        max-width:
+            96vw;
+
+        max-height:
+            80vh;
+
+    }
+
+}
